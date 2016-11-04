@@ -9,8 +9,13 @@ export default Ember.Route.extend({
   actions: {
     createPattern (newPattern) {
       return this.get('uploads').saveUpload(newPattern, '/patterns')
-      // how do I tell Ember to re-get all of the patterns here?
       .then(console.log)
+      // currently using two transitions to force a reload
+      // can't transition from a route to itself
+      // if I name my routes correctly (or have a separate route for upload vs. view all)
+      // I won't have to do this
+      .then(() => this.transitionTo('application'))
+      .then(() => this.transitionTo('pattern'))
       .catch(() => {
         console.log('Doom inside of pattern/route pointing to uploads service');
       })
