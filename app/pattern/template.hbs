@@ -1,10 +1,11 @@
 <h2>Pattern Upload Test</h2>
 
-{{image-upload}}
+{{image-upload createPattern='createPattern'}}
 
 {{#each model as |pattern|}}
   <h3>Pattern {{pattern.id}}</h3>
+  <p>{{pattern.patternImageUrl}}</p>
   <p>{{pattern.size}}</p>
-  <p><img src="{{pattern.uploadUrl}}"></p>
+  <p><img src="{{pattern.patternImageUrl}}"></p>
 {{/each}}
 
