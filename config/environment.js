@@ -23,6 +23,10 @@ module.exports = function (environment) {
       // Here you can pass flags/options to your application instance
       // when it is created
     },
+    paperclip: {
+      // from ember-data-paperclip
+      path: ':class/:attachment/:id_partition/:style/:filename.jpg'
+    },
   };
 
   if (environment === 'development') {
