@@ -1,9 +1,6 @@
 import Ember from 'ember';
 
-import ENV from 'quiltr/config/environment';
-
 export default Ember.Service.extend({
-  host: ENV.apiHost,
   ajax: Ember.inject.service(),
 
   saveUpload (data, endpoint) {
